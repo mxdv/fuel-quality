@@ -1,8 +1,8 @@
 {
   "id": "fuel_quality",
   "title": "Fuel Quality",
-  "description": "DME adapted fuel quality (FAK_KRAFTSTOFFQUALITAET_ADAPT / DID 5776): factor, estimated ROZ and knock adaptation label",
-  "version": "0.1.0",
+  "description": "DME adapted octane (DID 5776) and last 5 fill grades (DID 4035)",
+  "version": "0.2.0",
   "vendor": "custom",
   "loggingId": "OA9F",
   "iconGlyph": "fuel",
@@ -55,16 +55,6 @@
       "values": [
         { "id": "12", "label": "0x12 (MG1 / DME8)" },
         { "id": "10", "label": "0x10" }
-      ]
-    },
-    {
-      "key": "did",
-      "label": "Live DID",
-      "type": "enum",
-      "default": "5776",
-      "values": [
-        { "id": "5776", "label": "5776 FAK_KRAFTSTOFFQUALITAET" },
-        { "id": "407F", "label": "407F SUPERKLOPFER (raw)" }
       ]
     }
   ]
