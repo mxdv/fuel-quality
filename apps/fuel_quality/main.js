@@ -115,21 +115,22 @@ mgu.run({
             const cv = ctx.canvas(W, H).clear(t.bg);
             const ok = status === 'live' || status === 'demo';
 
-            cv.text('OCTANE', 48, 56, 28, t.dim, { font: 'bold', spacing: 2 });
+            // Label baseline well above the big numeral (glyphs rise ~0.75× size from baseline).
+            cv.text('RON', 48, 44, 22, t.dim, { font: 'bold', spacing: 2 });
             const ron = live && G.isNum(live.roz) ? live.roz.toFixed(1) : '--';
-            cv.text(ron, 48, 220, 160, ok ? t.text : t.dim, { font: 'num' });
+            cv.text(ron, 48, 200, 120, ok ? t.text : t.dim, { font: 'num' });
 
-            cv.text('RAW', 520, 56, 28, t.dim, { font: 'bold', spacing: 2 });
+            cv.text('RAW', 520, 44, 22, t.dim, { font: 'bold', spacing: 2 });
             const raw = live && live.rawInt != null ? String(live.rawInt) : '--';
-            cv.text(raw, 520, 220, 160, ok ? t.text : t.dim, { font: 'num' });
+            cv.text(raw, 520, 200, 120, ok ? t.text : t.dim, { font: 'num' });
 
-            cv.text('LAST 5 FILLS', 48, 300, 24, t.dim, { font: 'bold', spacing: 2 });
+            cv.text('LAST 5 FILLS', 48, 280, 22, t.dim, { font: 'bold', spacing: 2 });
 
             const list = fills.length ? fills : [0, 1, 2, 3, 4].map((i) => ({ index: i, grade: null, label: '--', km: null }));
             const slotW = 280;
             const gap = 24;
             const x0 = 48;
-            const y0 = 340;
+            const y0 = 320;
             list.slice(0, 5).forEach((f, i) => {
                 const x = x0 + i * (slotW + gap);
                 const col = gradeColor(f.grade);

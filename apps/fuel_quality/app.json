@@ -2,7 +2,7 @@
   "id": "fuel_quality",
   "title": "Fuel Quality",
   "description": "DME adapted octane (DID 5776) and last 5 fill grades (DID 4035)",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "vendor": "custom",
   "loggingId": "OA9F",
   "iconGlyph": "fuel",
