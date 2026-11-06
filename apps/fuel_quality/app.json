@@ -1,0 +1,71 @@
+{
+  "id": "fuel_quality",
+  "title": "Fuel Quality",
+  "description": "DME adapted fuel quality (FAK_KRAFTSTOFFQUALITAET_ADAPT / DID 5776): factor, estimated ROZ and knock adaptation label",
+  "version": "0.1.0",
+  "vendor": "custom",
+  "loggingId": "OA9F",
+  "iconGlyph": "fuel",
+  "signals": {
+    "com.harman.infotainment.systemfunctions.tasu.tasu.InternalTasu": {
+      "_instances": "SystemFunctionsInternalTasuInst1",
+      "_methods": ["sendTasuRequest"],
+      "_broadcasts": ["sendTasuResponse"]
+    }
+  },
+  "screens": [
+    {
+      "name": "MAIN",
+      "kind": "canvas",
+      "title": "Fuel Quality",
+      "buttons": [
+        ["BTN_REFRESH", "Refresh"],
+        ["BTN_SETTINGS", "Settings"]
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "key": "demo",
+      "label": "Demo data",
+      "type": "enum",
+      "default": "auto",
+      "values": [
+        { "id": "auto", "label": "Auto (if no diag)" },
+        { "id": "off", "label": "Off" },
+        { "id": "on", "label": "Always" }
+      ]
+    },
+    {
+      "key": "pollMs",
+      "label": "Poll interval",
+      "type": "enum",
+      "default": "1500",
+      "values": [
+        { "id": "800", "label": "0.8 s" },
+        { "id": "1500", "label": "1.5 s" },
+        { "id": "3000", "label": "3 s" }
+      ]
+    },
+    {
+      "key": "ecu",
+      "label": "DME address",
+      "type": "enum",
+      "default": "12",
+      "values": [
+        { "id": "12", "label": "0x12 (MG1 / DME8)" },
+        { "id": "10", "label": "0x10" }
+      ]
+    },
+    {
+      "key": "did",
+      "label": "Live DID",
+      "type": "enum",
+      "default": "5776",
+      "values": [
+        { "id": "5776", "label": "5776 FAK_KRAFTSTOFFQUALITAET" },
+        { "id": "407F", "label": "407F SUPERKLOPFER (raw)" }
+      ]
+    }
+  ]
+}
